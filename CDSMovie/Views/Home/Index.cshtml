@@ -1,0 +1,72 @@
+﻿
+<script src="~/Scripts/myScripts/lib/angular.js"></script>
+<script src="~/Scripts/myScripts/lib/jquery-3.3.1.js"></script>
+<script src="~/Scripts/myScripts/Controllers/movieController.js"></script>
+<script src="~/Scripts/myScripts/Services/movieService.js"></script>
+<script src="~/Scripts/myScripts/Controllers/accountController.js"></script>
+<script src="~/Scripts/myScripts/Services/accountService.js"></script>
+<script src="~/Scripts/myScripts/App/MainApp.js"></script>
+<style>
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        align-self: center;
+        padding: 10px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        padding: 8px;
+        text-align: left;
+        color: white;
+    }
+
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+</style>
+
+<html ng-app="mainApp">
+<div class="jumbotron">
+
+</div>
+<div class="row">
+    <div class="col-md-4" ng-controller="movieController">
+
+        <table>
+
+            <tr>
+                <th>Name</th>
+                <th>Genere</th>
+            </tr>
+
+            <tr ng-repeat="movie in movies">
+                <td>{{movie.Name}}</td>
+                <td>{{movie.Category}}</td>
+            </tr>
+        </table>
+
+    </div>
+    <div class="col-md-4" ng-controller="accountController">
+        <table>
+
+            <tr>
+                <th>Name</th>
+            </tr>
+
+            <tr ng-repeat="account in accounts">
+                <td>{{account.UserName}}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <p>testi</p>
+    </div>
+</div>
+</html>
